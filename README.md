@@ -38,7 +38,7 @@ Regarding to **mode** setting, at this point of time application supports two mo
 
 * **File** - app will detect if profiles defined in profiles.json are part of directory path or file name. In this case app will be able to push content to configuration store for properties stored as below for project_1 and project_2 as well. 
 
-![Properties](https://github.com/GarciaPL/GarciaPL.github.io/tree/master/img/consulpusher/Properties.png "Properties")
+![Properties](https://cdn.rawgit.com/GarciaPL/GarciaPL.github.io/master/img/consulpusher/Properties.png)
 
 * **Interactive** - user will provide via program arguments like profile, key and value using below syntax 
 
@@ -78,7 +78,7 @@ java -jar -Dspring.profiles.active=prod consul-pusher-1.0.0-SNAPSHOT.jar -profil
 - Logback - 1.1.7
 
 ## Screenshot
-![Consul](https://github.com/GarciaPL/GarciaPL.github.io/tree/master/img/consulpusher/Consul.png "Consul")
+![Consul](https://cdn.rawgit.com/GarciaPL/GarciaPL.github.io/master/img/consulpusher/Consul.png)
 
 ## License
 Code released under the  Apache License 2.0. Docs released under Creative Commons.
