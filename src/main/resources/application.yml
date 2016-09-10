@@ -1,0 +1,18 @@
+spring:
+  profiles.active: dev
+---
+spring:
+    profiles: dev
+mode: interactive
+configPath: /path/to/directory/with/properties
+consul:
+  host: 172.17.0.2
+  port: 8500
+---
+spring:
+    profiles: prod
+mode: file
+configPath: /path/to/directory/with/properties
+consul:
+  host: consulProdUrl
+  port: 8500

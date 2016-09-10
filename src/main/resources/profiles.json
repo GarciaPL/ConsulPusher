@@ -1,0 +1,25 @@
+{
+  "profiles": [
+    {
+      "name": "deployment"
+    },
+    {
+      "name": "dev"
+    },
+    {
+      "name": "devH2"
+    },
+    {
+      "name": "performance"
+    },
+    {
+      "name": "qa"
+    },
+    {
+      "name": "staging"
+    },
+    {
+      "name": "production"
+    }
+  ]
+}
