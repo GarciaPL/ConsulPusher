@@ -91,3 +91,5 @@ Code released under the  Apache License 2.0. Docs released under Creative Common
 Moreover I would like to put special greetings for [Norbert Potocki](https://github.com/norbertpotocki) who made initial version of this utility app under this link [Cfg4j-Pusher](https://github.com/cfg4j/cfg4j-pusher). Thanks a million!
 
 [![ghit.me](https://ghit.me/badge.svg?repo=GarciaPL/ConsulPusher)](https://ghit.me/repo/GarciaPL/ConsulPusher)
+
+[![Build Status](https://travis-ci.org/GarciaPL/ConsulPusher.svg?branch=master)](https://travis-ci.org/GarciaPL/ConsulPusher)
