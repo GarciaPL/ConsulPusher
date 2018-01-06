@@ -45,7 +45,7 @@ dependencies {
     compile group: 'ch.qos.logback', name: 'logback-core', version: "${logbackVersion}"
     compile group: 'ch.qos.logback', name: 'logback-classic', version: "${logbackVersion}"
 
-    compile group: "org.springframework.boot", name: "spring-boot-starter", version: "${springBootVersion}" {
+    compile(group: "org.springframework.boot", name: "spring-boot-starter", version: "${springBootVersion}") {
         exclude module: 'org.springframework.boot:spring-boot-starter-logging'
     }
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-log4j2', version: "${springBootVersion}"
