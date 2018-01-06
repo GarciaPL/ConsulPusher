@@ -1,5 +1,13 @@
 package pl.garciapl.consul.service.impl;
 
+import java.io.IOException;
+import java.nio.file.FileVisitResult;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.SimpleFileVisitor;
+import java.nio.file.attribute.BasicFileAttributes;
+import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,15 +19,12 @@ import pl.garciapl.consul.service.ConsulPusher;
 import pl.garciapl.consul.service.FileService;
 import pl.garciapl.consul.service.Filters;
 
-import java.io.IOException;
-import java.nio.file.*;
-import java.nio.file.attribute.BasicFileAttributes;
-import java.util.ArrayList;
-
 @Component
 public class FileServiceImpl implements FileService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(FileServiceImpl.class);
+
+    private static final String PROPERTIES = "properties";
 
     @Autowired
     private Filters filters;
@@ -36,7 +41,7 @@ public class FileServiceImpl implements FileService {
                     @Override
                     public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
 
-                        if (file.toString().endsWith("properties")) {
+                        if (file.toString().endsWith(PROPERTIES)) {
                             checkProfile(file, profiles);
                         }
 
@@ -52,7 +57,7 @@ public class FileServiceImpl implements FileService {
     }
 
     private void checkProfile(Path file, Profiles profiles) {
-        ArrayList<ProfileEntry> fileFilters = filters.filterProfilesForFile(file, profiles);
+        List<ProfileEntry> fileFilters = filters.filterProfilesForFile(file, profiles);
         if (!fileFilters.isEmpty()) {
             LOGGER.info("Process file {}", file.toAbsolutePath());
             for (ProfileEntry profileEntry : fileFilters) {
@@ -61,7 +66,7 @@ public class FileServiceImpl implements FileService {
             }
             LOGGER.info("\n");
         } else {
-            ArrayList<ProfileEntry> directoryFilters = filters.filterProfilesForDirectory(file.toAbsolutePath().toString(), profiles);
+            List<ProfileEntry> directoryFilters = filters.filterProfilesForDirectory(file.toAbsolutePath().toString(), profiles);
             if (!directoryFilters.isEmpty()) {
                 LOGGER.info("Process directory {}", file.toAbsolutePath());
                 for (ProfileEntry profileEntry : directoryFilters) {

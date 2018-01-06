@@ -1,7 +1,6 @@
 package pl.garciapl.consul.domain;
 
 import com.google.gson.annotations.SerializedName;
-
 import java.util.List;
 
 public class Profiles {

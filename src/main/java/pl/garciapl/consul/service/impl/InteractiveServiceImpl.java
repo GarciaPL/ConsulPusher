@@ -1,6 +1,10 @@
 package pl.garciapl.consul.service.impl;
 
-import org.apache.commons.cli.*;
+import org.apache.commons.cli.CommandLine;
+import org.apache.commons.cli.DefaultParser;
+import org.apache.commons.cli.HelpFormatter;
+import org.apache.commons.cli.Options;
+import org.apache.commons.cli.ParseException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,8 +13,6 @@ import pl.garciapl.consul.domain.Profiles;
 import pl.garciapl.consul.service.ConsulPusher;
 import pl.garciapl.consul.service.Filters;
 import pl.garciapl.consul.service.InteractiveService;
-
-import java.util.Comparator;
 
 @Component
 public class InteractiveServiceImpl implements InteractiveService {
@@ -27,17 +29,13 @@ public class InteractiveServiceImpl implements InteractiveService {
         options.addOption("v", "value", true, "Value");
 
         helpFormatter = new HelpFormatter();
-        helpFormatter.setOptionComparator(new Comparator<Option>() {
-            @Override
-            public int compare(Option o1, Option o2) {
-                if (o2.getOpt().equals("p")) {
-                    return 1;
-                } else {
-                    return o1.getId() - o2.getId();
-                }
+        helpFormatter.setOptionComparator((o1, o2) -> {
+            if (o2.getOpt().equals("p")) {
+                return 1;
+            } else {
+                return o1.getId() - o2.getId();
             }
         });
-
     }
 
     @Autowired

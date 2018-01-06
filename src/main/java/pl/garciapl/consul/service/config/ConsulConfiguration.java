@@ -25,7 +25,7 @@ public class ConsulConfiguration {
 
     @Bean
     public Consul consul() {
-        LOGGER.info("Connecting to Consul at " + host + ":" + port);
+        LOGGER.info("Connecting to Consul at {}:{}", host, port);
         return Consul.builder().withHostAndPort(HostAndPort.fromParts(host, port)).build();
     }
 

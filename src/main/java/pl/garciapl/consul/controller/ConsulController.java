@@ -2,6 +2,9 @@ package pl.garciapl.consul.controller;
 
 import com.google.common.base.Charsets;
 import com.google.gson.Gson;
+import java.io.IOException;
+import java.net.URISyntaxException;
+import javax.annotation.PostConstruct;
 import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,10 +19,6 @@ import org.springframework.util.StringUtils;
 import pl.garciapl.consul.domain.Profiles;
 import pl.garciapl.consul.service.FileService;
 import pl.garciapl.consul.service.InteractiveService;
-
-import javax.annotation.PostConstruct;
-import java.io.IOException;
-import java.net.URISyntaxException;
 
 @Controller
 @EnableAutoConfiguration

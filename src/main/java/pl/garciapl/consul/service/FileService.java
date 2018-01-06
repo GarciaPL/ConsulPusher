@@ -1,8 +1,7 @@
 package pl.garciapl.consul.service;
 
-import pl.garciapl.consul.domain.Profiles;
-
 import java.io.IOException;
+import pl.garciapl.consul.domain.Profiles;
 
 public interface FileService {
 
