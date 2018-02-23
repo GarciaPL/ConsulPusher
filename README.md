@@ -93,6 +93,6 @@ Moreover I would like to put special greetings for [Norbert Potocki](https://git
 [![ghit.me](https://ghit.me/badge.svg?repo=GarciaPL/ConsulPusher)](https://ghit.me/repo/GarciaPL/ConsulPusher)
 
 [![Travis](https://travis-ci.org/GarciaPL/ConsulPusher.svg?branch=master)](https://travis-ci.org/GarciaPL/ConsulPusher)
-[![CircleCI](https://circleci.com/gh/GarciaPL/ConsulPusher/tree/master.svg?style=svg)](https://circleci.com/gh/GarciaPL/ConsulPusher/tree/master)
+[![CircleCI](https://circleci.com/gh/GarciaPL/ConsulPusher/tree/master.svg?style=shield)](https://circleci.com/gh/GarciaPL/ConsulPusher/tree/master)
 
 [![Known Vulnerabilities](https://snyk.io/test/github/garciapl/consulpusher/badge.svg)](https://snyk.io/test/github/garciapl/consulpusher)
